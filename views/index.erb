@@ -1,0 +1,18 @@
+<h2>Pizza Orders</h2>
+
+<!-- create a list of all pizzas -->
+<% @pizzas.each do |pizza| %>
+<b>Name:</b>
+<p><%= pizza.pretty_name() %></p>
+<b>Order:</b>
+<p><%= pizza.quantity %> x <%= pizza.topping %></p>
+
+<!-- Add view text for pizza id -->
+<a href="/pizzas/<%= pizza.id %>">View</a>
+
+<!-- horizontal line -->
+<hr>
+<% end %>
+
+
+

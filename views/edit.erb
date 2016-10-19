@@ -1,0 +1,30 @@
+<h1>Edit Pizza Order</h1>
+
+<!-- pass in pizza object -->
+<form action="/pizzas/<%= @pizza.id %>" method="post">
+  <label for="first_name">First Name:</label>
+  <input type="text" name="first_name" value="<%= @pizza.first_name %>">
+  <label for="last_name">Last Name:</label>
+  <input type="text" name="last_name" value="<%= @pizza.last_name %>">
+
+<!-- drop down list -->
+  <label for="topping">Select a pizza:</label>
+  <select name="topping">
+    <option value="Margherita" 
+
+    <%='selected' if @pizza.topping =="Margherita"%>
+    >Margherita</option>
+
+    <option value="Calzone"
+    <%='selected' if @pizza.topping =="Calzone"%>
+    >Calzone</option>
+ 
+  </select>
+
+  <label for="quantity">Quantity:</label>
+  <input type="number" name="quantity" value="<%= @pizza.quantity %>">
+  
+  <!-- hidden method to allow form to use put  -->
+  <input type="hidden" name="_method" value="put">
+  <input type='submit' value="Order Pizza">
+</form>
